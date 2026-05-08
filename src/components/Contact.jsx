@@ -63,7 +63,7 @@ export default function Contact() {
       icon: <Phone size={20} />,
       label: 'Phone',
       value: '+91 7439570263',
-      href: 'tel:7439570263',
+      href: 'tel:+91 7439570263',
       color: 'green'
     },
     {
