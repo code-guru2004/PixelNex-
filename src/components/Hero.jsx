@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-25"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28"
     >
       {/* Animated Background */}
       <motion.div 
@@ -115,7 +115,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 backdrop-blur-sm"
           >
-            <Sparkles size={16} className="text-primary" />
+            <Sparkles size={16} className="text-primary animate-bounce" />
             <span className="text-sm font-medium text-primary">PixelNex Software Solutions</span>
           </motion.div>
 
