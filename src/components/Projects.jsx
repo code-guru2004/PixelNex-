@@ -7,8 +7,8 @@ export default function Projects() {
       title: 'Optics Commerce Platform',
       desc: 'A high-conversion headless e-commerce store with real-time inventory management.',
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Stripe'],
-      link: '#',
-      github: '#',
+      link: 'https://capable-dodol-3f48d5.netlify.app',
+      github: 'https://github.com/Prithwish20/moonlit-optics.git',
       partner: 'Moonlit Optics',
       image: 'moonlit.png'
     },
@@ -16,7 +16,7 @@ export default function Projects() {
       title: 'Test Portal-SSC, RRB NTPC, PSC',
       desc: 'Internal developer productivity tracking tool with D3.js data visualizations.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'D3'],
-      link: '#',
+      link: 'https://test-easy-kappa.vercel.app',
       github: '#',
       partner: null,
       image: 'testmate.png'
