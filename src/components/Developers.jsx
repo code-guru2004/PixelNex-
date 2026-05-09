@@ -43,8 +43,8 @@ export default function Developers() {
       location: "Kolkata, India",
       skills: ["React", "Node.js", "TypeScript", "Tailwind CSS", "MongoDB", "Express"],
       social: {
-        linkedin: "https://linkedin.com/in/nayandas",
-        github: "https://github.com/nayandas",
+        linkedin: "https://www.linkedin.com/in/nayan-das2004/",
+        github: "https://github.com/code-guru2004",
         twitter: "https://twitter.com/nayandas"
       },
       achievements: [
@@ -67,8 +67,8 @@ export default function Developers() {
       location: "Kolkata, India",
       skills: ["React", "Next.js", "JavaScript", "Tailwind CSS", "Firebase", "Git"],
       social: {
-        linkedin: "https://linkedin.com/in/prithwishdas",
-        github: "https://github.com/prithwishdas",
+        linkedin: "https://www.linkedin.com/in/prithwish-das-971791266/",
+        github: "https://github.com/Prithwish20",
         twitter: "https://twitter.com/prithwishdas"
       },
       achievements: [
