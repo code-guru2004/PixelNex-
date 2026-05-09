@@ -19,6 +19,7 @@ import Schema from './components/Schema';
 import FAQ from './components/FAQ';
 import Testimonials from './components/Testimonials';
 import Developers from './components/Developers';
+import DevelopmentProcess from './components/DevelopmentProcess';
 
 export default function App() {
   useEffect(() => {
@@ -33,7 +34,7 @@ export default function App() {
     <HelmetProvider>
       <SEO />
       <Schema />
-     
+      <SmoothScroll>
         <div className="min-h-screen bg-background text-white selection:bg-primary/30 selection:text-white">
           <a 
             href="#main-content" 
@@ -50,6 +51,7 @@ export default function App() {
             <Services />
             <Projects />
             <TechStack />
+            <DevelopmentProcess />
             <Developers />
             <Testimonials />
             <FAQ /> {/* Add FAQ component here */}
@@ -58,7 +60,7 @@ export default function App() {
           
           <Footer />
         </div>
-
+        </SmoothScroll>
     </HelmetProvider>
   );
 }
