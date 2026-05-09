@@ -34,7 +34,7 @@ export default function App() {
     <HelmetProvider>
       <SEO />
       <Schema />
-      <SmoothScroll>
+      
         <div className="min-h-screen bg-background text-white selection:bg-primary/30 selection:text-white">
           <a 
             href="#main-content" 
@@ -60,7 +60,7 @@ export default function App() {
           
           <Footer />
         </div>
-        </SmoothScroll>
+        
     </HelmetProvider>
   );
 }
