@@ -31,12 +31,14 @@ export default function Navbar() {
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Tech', href: '#tech' },
+    { name: 'Developers', href: '#developers' },
+    { name: 'FAQs', href: '#faq' },
   ];
 
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md border-b border-white/5 py-4' : 'py-6 bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-10 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 md:px-10 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3">
             <img src="/logo1.png" alt="PixelNex Logo" className="h-16 w-auto" />
           </a>
@@ -62,7 +64,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden text-white relative z-50"
+            className="md:hidden text-white relative z-50 mr-3"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

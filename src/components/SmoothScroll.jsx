@@ -6,16 +6,16 @@ export default function SmoothScroll({ children }) {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    let scroll;
+    let scroll = null;
 
     const initScroll = () => {
-      if (scrollRef.current) {
+      if (scrollRef.current && !scroll) {
         scroll = new LocomotiveScroll({
           el: scrollRef.current,
           smooth: true,
           smoothMobile: true,
-          resetNativeScroll: true,
-          multiplier: 0.8, // Reduce speed for smoother feel
+          getDirection: true,
+          multiplier: 0.8,
           smartphone: {
             smooth: true,
           },
@@ -25,12 +25,15 @@ export default function SmoothScroll({ children }) {
         });
 
         // Update scroll on window resize
-        window.addEventListener('resize', () => {
-          scroll.update();
-        });
+        const handleResize = () => {
+          if (scroll) scroll.update();
+        };
+        
+        window.addEventListener('resize', handleResize);
 
         // Clean up
         return () => {
+          window.removeEventListener('resize', handleResize);
           if (scroll) scroll.destroy();
         };
       }
@@ -42,7 +45,6 @@ export default function SmoothScroll({ children }) {
     return () => {
       clearTimeout(timeout);
       if (scroll) scroll.destroy();
-      window.removeEventListener('resize', () => {});
     };
   }, []);
 

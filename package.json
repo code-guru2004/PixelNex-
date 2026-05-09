@@ -16,7 +16,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "dotenv": "^17.2.3",
     "express": "^4.21.2",
-    "locomotive-scroll": "^5.0.1",
+    "locomotive-scroll": "^4.1.4",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
     "next-seo": "^7.2.0",

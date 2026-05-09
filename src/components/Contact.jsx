@@ -210,36 +210,7 @@ export default function Contact() {
               ))}
             </motion.div>
 
-            {/* FAQ Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="pt-8 border-t border-white/10"
-            >
-              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <MessageSquare size={18} className="text-primary" />
-                Frequently Asked Questions
-              </h3>
-              <div className="space-y-3">
-                {faqs.map((faq, idx) => (
-                  <motion.details
-                    key={idx}
-                    className="group"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.6 + idx * 0.1 }}
-                  >
-                    <summary className="cursor-pointer text-sm text-gray-300 hover:text-primary transition-colors font-medium list-none flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/10">
-                      <span>{faq.q}</span>
-                      <ArrowRight size={14} className="group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <p className="text-xs text-gray-500 mt-2 pl-4">{faq.a}</p>
-                  </motion.details>
-                ))}
-              </div>
-            </motion.div>
+           
           </motion.div>
 
           {/* Right Column - Form */}
@@ -356,10 +327,10 @@ export default function Contact() {
                   {isSubmitting ? (
                     <>
                       <motion.div
-                        animate={{ rotate: 360 }}
+                        //animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       >
-                        <Send size={18} />
+                        <Send size={18} className="animate-pulse"/>
                       </motion.div>
                       Sending...
                     </>

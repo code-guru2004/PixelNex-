@@ -16,6 +16,9 @@ import Footer from './components/Footer';
 import SmoothScroll from './components/SmoothScroll';
 import SEO from './components/SEO';
 import Schema from './components/Schema';
+import FAQ from './components/FAQ';
+import Testimonials from './components/Testimonials';
+import Developers from './components/Developers';
 
 export default function App() {
   useEffect(() => {
@@ -47,6 +50,9 @@ export default function App() {
             <Services />
             <Projects />
             <TechStack />
+            <Developers />
+            <Testimonials />
+            <FAQ /> {/* Add FAQ component here */}
             <Contact />
           </main>
           
