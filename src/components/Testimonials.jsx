@@ -1,5 +1,7 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { Star, Quote, ChevronLeft, ChevronRight, Sparkles, Briefcase, Calendar } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight, Briefcase, Calendar, ShieldCheck } from 'lucide-react';
+import { MdTask } from "react-icons/md";
+
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 export default function Testimonials() {
@@ -418,15 +420,15 @@ export default function Testimonials() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-primary" />
+            <ShieldCheck size={14} className="text-primary" />
             <span className="text-xs text-gray-500">Trusted by 50+ Companies</span>
           </div>
           <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-primary" />
-            <span className="text-xs text-gray-500">5-Star Rated on Clutch</span>
+          <Star size={14} className="text-primary" />
+            <span className="text-xs text-gray-500">4.9-Star Rated on Clutch</span>
           </div>
           <div className="flex items-center gap-2">
-            <Sparkles size={14} className="text-primary" />
+          <MdTask size={14} className="text-primary" />
             <span className="text-xs text-gray-500">100+ Successful Projects</span>
           </div>
         </motion.div>
