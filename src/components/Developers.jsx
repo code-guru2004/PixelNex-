@@ -57,26 +57,33 @@ export default function Developers() {
     {
       id: 2,
       name: "Prithwish Das",
-      role: "Software Engineer",
+      role: "Software Engineer, Business Development Representative, Relationship Manager",
       image: "https://ui-avatars.com/api/?background=6366f1&color=fff&name=Prithwish+Das",
-      education: "B.Tech in CSE - UEM Kolkata",
-      experience: "1+ years",
-      currentRole: "Software Engineer",
+      education: "B.Tech in Computer Science & Engineering - UEM Kolkata",
+      experience: "1+ Years",
+      currentRole: "Relationship Manager",
       phone: "+91 7439570263",
       email: "dasprithwish444@gmail.com",
-      location: "Kolkata, India",
-      skills: ["React", "Next.js", "JavaScript", "Tailwind CSS", "Firebase", "Git"],
+      location: "Kolkata, West Bengal, India",
+      skills: [
+        "Client Interaction",
+        "Business Development",
+        "Relationship Management",
+        "Communication",
+        "Frontend Development",
+        "JavaScript",
+      ],
       social: {
         linkedin: "https://www.linkedin.com/in/prithwish-das-971791266/",
         github: "https://github.com/Prithwish20",
         twitter: "https://twitter.com/prithwishdas"
       },
       achievements: [
-        "Developed 10+ web applications",
-        "Hackathon winner",
-        "Tech community mentor"
+        "Worked on business development and client relationship management",
+        "Participated in hackathons and technical projects",
+        "Contributed to tech communities and collaborative projects"
       ],
-      bio: "Enthusiastic software engineer specializing in frontend development and UI/UX. Committed to building responsive and user-friendly applications."
+      bio: "Passionate software engineer with experience in frontend and backend development, business development, and relationship management. Skilled in building modern web applications, handling client interactions, and delivering user-focused digital solutions."
     }
   ];
 
