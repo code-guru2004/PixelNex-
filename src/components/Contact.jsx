@@ -1,15 +1,8 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Send, MapPin, Mail, MessageSquare, Phone, Clock, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
-import { useRef, useState } from 'react';
+import { MapPin, Mail, MessageSquare, Phone, Clock, Sparkles } from 'lucide-react';
+import { useRef } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const sectionRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -18,31 +11,6 @@ export default function Contact() {
   });
   
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log('Form submitted:', formData);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
-  };
 
   const contactInfo = [
     {
@@ -63,7 +31,7 @@ export default function Contact() {
       icon: <Phone size={20} />,
       label: 'Phone',
       value: '+91 7439570263',
-      href: 'tel:+91 7439570263',
+      href: 'tel:+917439570263',
       color: 'green'
     },
     {
@@ -73,12 +41,6 @@ export default function Contact() {
       href: null,
       color: 'amber'
     }
-  ];
-
-  const faqs = [
-    { q: 'What is your typical project timeline?', a: 'Project timelines vary based on complexity, but typically range from 4-12 weeks for most projects.' },
-    { q: 'Do you offer ongoing maintenance?', a: 'Yes, we provide comprehensive maintenance and support packages for all our projects.' },
-    { q: 'What technologies do you specialize in?', a: 'We specialize in React, Node.js, Next.js, and modern cloud technologies.' }
   ];
 
   const colorVariants = {
@@ -209,11 +171,9 @@ export default function Contact() {
                 </motion.div>
               ))}
             </motion.div>
-
-           
           </motion.div>
 
-          {/* Right Column - Form */}
+          {/* Right Column - Google Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -235,123 +195,34 @@ export default function Contact() {
               }}
             />
             
-            <div className="relative p-8 md:p-10 rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden">
-              
-              {/* Success Message */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ 
-                  opacity: isSubmitted ? 1 : 0,
-                  scale: isSubmitted ? 1 : 0.9,
-                  display: isSubmitted ? 'flex' : 'none'
-                }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 z-20 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-8 text-center"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", delay: 0.2 }}
-                  className="w-16 h-16 rounded-full bg-green-500/20 border border-green-500/50 flex items-center justify-center mb-4"
-                >
-                  <CheckCircle size={32} className="text-green-500" />
-                </motion.div>
-                <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                <p className="text-gray-400 text-sm">
-                  Thanks for reaching out! We'll get back to you within 24 hours.
+            <div className="relative rounded-3xl bg-white/[0.02] backdrop-blur-sm border border-white/10 overflow-hidden">
+              {/* Form Header */}
+              <div className="p-6 border-b border-white/10 bg-gradient-to-r from-primary/10 to-transparent">
+                <h3 className="text-xl font-semibold text-white flex items-center gap-2">
+                  <MessageSquare size={20} className="text-primary" />
+                  Send us a message
+                </h3>
+                <p className="text-gray-400 text-sm mt-1">
+                  Fill out the form below and we'll get back to you within 24 hours.
                 </p>
-              </motion.div>
-
-              <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                    <span>Name</span>
-                    <span className="text-primary text-xs">*</span>
-                  </label>
-                  <motion.input 
-                    type="text" 
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="John Doe" 
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
-                    whileFocus={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                    <span>Email Address</span>
-                    <span className="text-primary text-xs">*</span>
-                  </label>
-                  <motion.input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="john@example.com" 
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all"
-                    whileFocus={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
-                    <span>Message</span>
-                    <span className="text-primary text-xs">*</span>
-                  </label>
-                  <motion.textarea 
-                    rows={5}
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Tell us about your project..." 
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all resize-none"
-                    whileFocus={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                </div>
-                
-                <motion.button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-primary to-primary/80 text-white font-bold rounded-xl px-6 py-4 flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+              </div>
+              
+              {/* Google Form Iframe */}
+              <div className="relative w-full overflow-auto" style={{ height: '650px' }}>
+                <iframe 
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSf_yuzhw4hqxGUku-T3il56epS2jOopS0vCNC17saESz_KwVQ/viewform?embedded=true"
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  marginHeight="0" 
+                  marginWidth="0"
+                  title="Contact Form"
+                  className="absolute top-0 left-0 w-full h-full"
+                  loading="lazy"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <motion.div
-                        //animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      >
-                        <Send size={18} className="animate-pulse"/>
-                      </motion.div>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      Send Message
-                    </>
-                  )}
-                </motion.button>
-
-                {/* Trust Badge */}
-                <motion.p 
-                  className="text-center text-xs text-gray-600 mt-4"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  We respect your privacy. Your information is safe with us.
-                </motion.p>
-              </form>
+                  Loading…
+                </iframe>
+              </div>
             </div>
           </motion.div>
 
