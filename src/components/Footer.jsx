@@ -78,13 +78,13 @@ export default function Footer() {
                 whileHover={{ scale: 1.02 }}
               >
                 <motion.img 
-                  src="/logo1.png" 
-                  alt="PixelNex Logo" 
+                  src="/logo-vectraSyn.png" 
+                  alt="VectraSyn Logo" 
                   className="h-10 w-auto grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                   whileHover={{ rotate: 5 }}
                 />
                 <span className="text-2xl font-bold font-display tracking-tight text-white">
-                  Pixel<span className="text-primary">Nex</span>
+                Vectra<span className="text-primary">Syn</span>
                 </span>
               </motion.a>
               
@@ -119,7 +119,7 @@ export default function Footer() {
                 >
                   <Heart size={12} className="text-red-500" />
                 </motion.div>
-                <span className="text-xs text-gray-600">by PixelNex team</span>
+                <span className="text-xs text-gray-600">by VectraSyn team</span>
               </motion.div>
             </motion.div>
 
@@ -171,7 +171,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p className="text-gray-600 text-sm">
-              &copy; {currentYear} PixelNex Software Solutions. All rights reserved.
+              &copy; {currentYear} VectraSyn Software Solutions. All rights reserved.
             </p>
             
             <div className="flex items-center gap-4 text-sm">
